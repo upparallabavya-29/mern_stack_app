@@ -19,6 +19,7 @@ const LandingPage = () => {
                     <a href="#features" className="text-gray-600 hover:text-gray-900 font-medium transition cursor-pointer">Features</a>
                     <a href="#" className="text-gray-600 hover:text-gray-900 font-medium transition cursor-pointer">Testimonials</a>
                     <a href="#" className="text-gray-600 hover:text-gray-900 font-medium transition cursor-pointer">Contact</a>
+                    <Link to="/login" className="text-gray-600 hover:text-gray-900 font-medium transition cursor-pointer">Login</Link>
                 </div>
             </nav>
 
@@ -33,7 +34,7 @@ const LandingPage = () => {
                         Practice with AI-powered mock interviews and get personalized feedback to improve your confidence and skills.
                     </p>
                     <div className="flex justify-center gap-4">
-                        <Link to="/dashboard" className="bg-white text-slate-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg transform hover:-translate-y-0.5">
+                        <Link to="/login" className="bg-white text-slate-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg transform hover:-translate-y-0.5">
                             Get Started
                         </Link>
                         <button className="bg-transparent border border-gray-500 text-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition">
