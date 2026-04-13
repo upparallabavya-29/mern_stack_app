@@ -463,6 +463,7 @@ const Dashboard = () => {
                     setPlayingVideoId('my-interview');
                   } catch (err) {
                     console.error("Failed to generate", err);
+                    alert("Failed to generate interview questions. The API request was rejected (Please check your Gemini API key in the backend .env).");
                   } finally {
                     setIsGeneratingQuestions(false);
                   }

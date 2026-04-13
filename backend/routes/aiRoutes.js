@@ -18,7 +18,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 router.post('/generate-questions', async (req, res) => {
     try {
         const { role, experienceLevel, topic } = req.body;
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         const prompt = `Generate 5 technical interview questions for a ${role} position with ${experienceLevel} years of experience. Focus on ${topic || 'general'} topics. Return the response as a JSON array of strings.`;
 
@@ -50,7 +50,7 @@ router.post('/generate-resume-questions', async (req, res) => {
             return res.status(400).json({ error: 'Resume text is required.' });
         }
 
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         const prompt = `You are an expert technical recruiter analyzing a candidate's resume. 
         Read the following resume text carefully and extract 5 highly specific, challenging interview questions tailored directly to this candidate's listed skills, tools, past project experiences, and roles. 
@@ -109,7 +109,7 @@ router.post('/upload-resume-questions', upload.single('resume'), async (req, res
             return res.status(400).json({ error: 'Could not extract text from document.' });
         }
 
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         const prompt = `You are an expert technical recruiter analyzing a candidate's resume. 
         Read the following resume text carefully and extract 5 highly specific, challenging interview questions tailored directly to this candidate's listed skills, tools, past project experiences, and roles. 
@@ -143,7 +143,7 @@ router.post('/upload-resume-questions', upload.single('resume'), async (req, res
 router.post('/evaluate-answer', async (req, res) => {
     try {
         const { question, answer, role } = req.body;
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         const prompt = `You are an expert interviewer for a ${role} position. 
         Question: "${question}"
