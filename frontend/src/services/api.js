@@ -29,4 +29,20 @@ export const evaluateAnswer = async (question, answer, role) => {
     }
 };
 
+export const uploadResumeFile = async (file) => {
+    const formData = new FormData();
+    formData.append('resume', file);
+    try {
+        const response = await api.post('/ai/upload-resume-questions', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error uploading resume:', error);
+        throw error;
+    }
+};
+
 export default api;
